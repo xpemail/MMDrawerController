@@ -665,12 +665,25 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
 }
 
 #pragma mark - Subclass Methods
--(BOOL)shouldAutomaticallyForwardAppearanceMethods{
+//-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
+//    return NO;
+//}
+//
+//-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+//    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+//    for(UIViewController * childViewController in self.childViewControllers){
+//        [childViewController didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+//    }
+//}
+
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
     return NO;
 }
-
--(BOOL)shouldAutomaticallyForwardRotationMethods{
+-(BOOL)shouldAutorotate{
     return NO;
+}
+-(NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskAllButUpsideDown;
 }
 
 -(BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers{
